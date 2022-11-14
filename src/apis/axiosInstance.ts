@@ -3,7 +3,6 @@ import axios, { AxiosRequestConfig } from 'axios';
 type AxiosRequestHeaders = AxiosRequestConfig<any>['headers'];
 
 const instance = axios.create({
-  // baseURL: 'http://localhost:4000',
   timeout: 30_000,
 });
 
@@ -29,6 +28,12 @@ export const get = <T>({
   params?: Record<string, string>;
   headers?: AxiosRequestHeaders;
 }) => {
+  const qs = new URLSearchParams(params).toString();
+
+  if (qs.length > 0) {
+    url = `${url}?${qs}`;
+  }
+
   return instance.get<T>(url, { headers, params });
 };
 
