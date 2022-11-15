@@ -4,7 +4,7 @@ import { MainLayout } from '../components/MainLayout';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ErrorBoundary, RenderFallbackProps } from '../components/error/ErrorBoundary';
 import { TokenContextProvider } from '../context/TokenContext';
-import { ErrorAlert } from '../components/ErrorAlert';
+import { ErrorAlert } from '../components/error/ErrorAlert';
 
 const queryClient = new QueryClient();
 
