@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import Link from 'next/link';
+import { LogoutMenu } from './LogoutMenu';
 
 export function Menu() {
   return (
@@ -15,9 +16,7 @@ export function Menu() {
             <a>사용자</a>
           </Link>
         </li>
-        <li>
-          <a>로그아웃</a>
-        </li>
+        <LogoutMenu />
       </ul>
     </Container>
   );
