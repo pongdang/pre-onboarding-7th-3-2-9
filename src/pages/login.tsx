@@ -1,15 +1,15 @@
 import { useRouter } from 'next/router';
 import { FormEvent, useState } from 'react';
-import useUser from '../hooks/useUser';
+import { useUserLogin } from '../hooks/useUser';
 
-export default function Login() {
+export default function LoginPage() {
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
 
-  const { login } = useUser();
+  const { login } = useUserLogin();
   const router = useRouter();
 
-  const onLoginSubmit = async (e: FormEvent<HTMLFormElement>) => {
+  const onLogin = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     await login({ email, password });
     router.push('/');
@@ -17,7 +17,7 @@ export default function Login() {
 
   return (
     <>
-      <form onSubmit={onLoginSubmit}>
+      <form onSubmit={onLogin}>
         <input type="email" onChange={e => setEmail(e.target.value)} />
         <input type="password" onChange={e => setPassword(e.target.value)} />
         <button type="submit">로그인</button>
