@@ -1,5 +1,10 @@
-import React from 'react';
+import { SSRSuspense } from '../../components/SSRSuspense';
+import { UserList } from '../../components/users/UserList';
 
-export default function UserPage() {
-  return <h1>UserPage</h1>;
+export default function UsersPage() {
+  return (
+    <SSRSuspense fallback={<h1>로딩</h1>}>
+      <UserList />
+    </SSRSuspense>
+  );
 }
