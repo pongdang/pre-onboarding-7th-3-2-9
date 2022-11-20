@@ -1,3 +1,5 @@
+import { useQuery } from '@tanstack/react-query';
+import { fetchUserList } from '../apis/fetchUserList';
 import { userLogin } from '../apis/userLogin';
 import { useTokenContext } from '../context/TokenContext';
 
@@ -21,4 +23,14 @@ export function useUserLogout() {
       clearAccessToken();
     },
   };
+}
+
+export function useUserAccountList() {
+  const { accessToken } = useTokenContext();
+
+  const { data: accountList } = useQuery(['getUserList'], () => fetchUserList({ accessToken }), {
+    suspense: true,
+  });
+
+  return accountList;
 }
