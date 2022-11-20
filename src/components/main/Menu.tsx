@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import Link from 'next/link';
+import { AccountMenu } from './AccountMenu';
 import { LogoutMenu } from './LogoutMenu';
 
 export function Menu() {
@@ -7,16 +8,16 @@ export function Menu() {
     <Container>
       <ul>
         <li>
-          <Link href="/">
-            <a>계좌목록</a>
-          </Link>
+          <AccountMenu />
         </li>
         <li>
           <Link href="/users">
             <a>사용자</a>
           </Link>
         </li>
-        <LogoutMenu />
+        <li>
+          <LogoutMenu />
+        </li>
       </ul>
     </Container>
   );
