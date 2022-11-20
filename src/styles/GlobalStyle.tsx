@@ -37,6 +37,11 @@ const globalStyles = css`
   :root {
     font-size: 62.5%;
   }
+
+  .grid-column-9 {
+    display: grid;
+    grid-template-columns: repeat(9, 100px);
+  }
 `;
 export default function GlobalStyle() {
   return <Global styles={globalStyles} />;

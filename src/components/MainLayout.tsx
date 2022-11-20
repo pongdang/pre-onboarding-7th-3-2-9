@@ -30,6 +30,7 @@ const Layout = styled.article`
 
     display: flex;
     flex-direction: column;
+    overflow-x: scroll;
 
     header {
       background-color: skyblue;
@@ -38,6 +39,8 @@ const Layout = styled.article`
     main {
       background-color: pink;
       flex-grow: 1;
+      overflow-x: scroll;
+      padding: 30px 16px;
     }
   }
 `;
